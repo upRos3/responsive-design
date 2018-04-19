@@ -1,0 +1,24 @@
+{
+  "name": "spotev",
+  "version": "1.0.0",
+  "description": "Exercise for SpotEV",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upRos3/responsive-design.git"
+  },
+  "author": "Josh Rose",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/upRos3/responsive-design/issues"
+  },
+  "homepage": "https://github.com/upRos3/responsive-design#readme"
+}
