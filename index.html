@@ -4,22 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Responsive Web Application</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+  <link rel="stylesheet" href="index.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="index.js"></script>
+
 </head>
 <body>
   <header id="header">
-    <span><h1>Design.</h1></span>
+    <nav class="navbar navbar-nav">
+      <div class="row">
+        <div class="col-xs-2 col-md-1">
+          <button type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="col-xs-8 col-md-6">
+          <span><h1>Design.</h1></span>
+        </div>
+        <div class="col-xs-2 col-md-1">
+          <button id="search-btn" type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
   </header>
+
+
   <div id="image">
     <img src="assets/images/image.jpg" />
   </div>
   <main>
-    <div id="headline">
-      <h1>Design is a journey of</h1>
-      <h1>Discovery</h1>
+    <div id="heading">
+      <h1><div id="heading1">
+        Design is a journey of
+      </div>
+      <div id="heading2">
+        Discovery
+      </div>
+    </h1>
     </div>
     <div id="author">
-      <h3>Writen by</h3>
-      <h3>William Hernandez. April 05 ,2017</h3>
+      <h3>Writen by <br />
+      William Hernandez. April 05 ,2017</h3>
     </div>
     <div id="navigate">
       <button id="go-to-button">Part 1</button>
@@ -27,9 +59,15 @@
   </main>
   <footer>
     <div id="interaction-buttons">
-        <span id="like">[like img] 400</span>
-        <span id="viewed">[viewed img] 275</span>
-        <span id="comments">[comment img] 112</span>
+      <button type="button" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-heart" aria-hidden="true">400</span>
+      </button>
+      <button type="button" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-eye-open" aria-hidden="true">275</span>
+      </button>
+      <button type="button" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-comment" aria-hidden="true">112</span>
+      </button>
     </div>
     <div id="page-number-nav">
       <span>1 of 5 [----&gt]</span>
