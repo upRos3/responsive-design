@@ -14,40 +14,43 @@
   <script type="text/javascript" src="index.js"></script>
 
 </head>
+
+<!-- Working on nav bar currently, continue with this in the morning -->
 <body>
-  <header id="header">
-    <nav class="navbar navbar-nav">
-      <div class="row">
-        <div class="col-xs-2 col-md-1">
-          <button type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-          </button>
-        </div>
-        <div class="col-xs-8 col-md-6">
-          <span><h1>Design.</h1></span>
-        </div>
-        <div class="col-xs-2 col-md-1">
-          <button id="search-btn" type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          </button>
-        </div>
+  <nav class="navbar navbar-nav">
+    <div class="container-fluid">
+      <div class="col-xs-2 col-md-">
+        <button id="menu-btn" type="button" class="btn btn-default" aria-label="Left Align">
+          <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+        </button>
       </div>
-    </nav>
-  </header>
+      <div class="col-xs-8 col-md-6">
+        <span><h1>Design.</h1></span>
+      </div>
+      <div class="col-xs-2 col-md-1">
+        <button id="search-btn" type="button" class="btn btn-default" aria-label="Left Align">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
 
   <div id="image">
     <img src="assets/images/image.jpg" />
   </div>
+  <button id="play-btn" type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+  </button>
   <main>
     <div id="heading">
-      <h1><div id="heading1">
+      <h2><div id="heading1">
         Design is a journey of
       </div>
       <div id="heading2">
         Discovery
       </div>
-    </h1>
+    </h2>
     </div>
     <div id="author">
       <h3>Writen by <br />
