@@ -70,5 +70,7 @@ h1 {
 }
 
 #page-number-nav {
-  float: right;
+  width: 100%;
+  text-align: right;
+  padding-top: 20px;
 }

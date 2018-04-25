@@ -1,8 +1,8 @@
 $(document).ready(function() {
-  var timesVisited = 0;
+  var timesVisited = 1;
 
   if (localStorage.timesVisited === null) {
-    localStorage.setItem("timesVisited", 1);
+    localStorage.setItem("timesVisited", timesVisited);
   } else {
     var timesVisited = Number(localStorage.getItem("timesVisited"));
     timesVisited += 1;
@@ -33,7 +33,7 @@ $(document).ready(function() {
 
   $searchButton.on("click", function() {
     console.log("Sup");
-    $("#search-toggle").slideToggle("fast", function() {
+    $("#search-toggle").slideToggle(400, function() {
       $("#search-text-box").focus();
     });
   });
