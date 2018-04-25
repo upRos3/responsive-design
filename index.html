@@ -15,7 +15,6 @@
 
 </head>
 
-<!-- Working on nav bar currently, continue with this in the morning -->
 <body>
   <nav class="navbar navbar-nav">
     <div class="container-fluid">
@@ -28,9 +27,16 @@
         <span><h1>Design.</h1></span>
       </div>
       <div class="col-xs-2 col-md-1">
-        <button id="search-btn" type="button" class="btn btn-default" aria-label="Left Align">
-          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-        </button>
+        <div class="search-function">
+        <form id="search-form">
+          <button id="search-btn" type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+          <div id="search-toggle">
+            <input id="search-text-box" type="text" name="s" value="" placeholder="Search">
+          </div>
+        </form>
+        </div>
       </div>
     </div>
   </nav>
@@ -57,19 +63,22 @@
       William Hernandez. April 05 ,2017</h3>
     </div>
     <div id="navigate">
-      <button id="go-to-button">Part 1</button>
+      <a class="btn btn-primary" href="#" role="button">Link</a>
     </div>
   </main>
   <footer>
     <div id="interaction-buttons">
-      <button type="button" class="btn btn-default" aria-label="Left Align">
-        <span class="glyphicon glyphicon-heart" aria-hidden="true">400</span>
+      <button type="button" class="btn btn-default">
+        <span class="glyphicon glyphicon-heart"></span>
+        <span class="interaction-button-text interaction-button-like">400</span>
       </button>
-      <button type="button" class="btn btn-default" aria-label="Left Align">
-        <span class="glyphicon glyphicon-eye-open" aria-hidden="true">275</span>
+      <button type="button" class="btn btn-default">
+        <span class="glyphicon glyphicon-eye-open"></span>
+        <span class="interaction-button-text interaction-button-viewed">275</span>
       </button>
-      <button type="button" class="btn btn-default" aria-label="Left Align">
-        <span class="glyphicon glyphicon-comment" aria-hidden="true">112</span>
+      <button type="button" class="btn btn-default">
+        <span class="glyphicon glyphicon-comment"></span>
+        <span class="interaction-button-text interaction-button-comment">110</span>
       </button>
     </div>
     <div id="page-number-nav">
