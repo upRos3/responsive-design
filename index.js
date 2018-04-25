@@ -1,4 +1,21 @@
 $(document).ready(function() {
+  var $searchButton = $("#search-btn");
+  var $menuButton = $("#menu-btn");
+
+  $searchButton.on("click", function() {
+    console.log("Sup");
+    $("#search-toggle").slideToggle(400, function() {
+      $("#search-text-box").focus();
+    });
+  });
+
+  $menuButton.on("click", function() {
+    console.log("menu");
+  });
+
+  var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+  console.log(isMobile);
+
   var timesVisited = 1;
 
   if (localStorage.timesVisited === null) {
@@ -28,19 +45,9 @@ $(document).ready(function() {
     return isPrime(timesVisited);
   }
 
-  var $searchButton = $("#search-btn");
-  var $menuButton = $("#menu-btn");
-
-  $searchButton.on("click", function() {
-    console.log("Sup");
-    $("#search-toggle").slideToggle(400, function() {
-      $("#search-text-box").focus();
-    });
-  });
-
-  $menuButton.on("click", function() {
-    console.log("menu");
-  });
+  if (isMobile.matches && timesVisited === 2) {
+    alert("Welcome Back!");
+  }
 
   console.log(numberOfViewsToday(timesVisited));
 });

@@ -16,39 +16,41 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-nav">
-    <div class="container-fluid">
-      <div class="col-xs-2 col-md-">
-        <button id="menu-btn" type="button" class="btn btn-default" aria-label="Left Align">
-          <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="col-xs-8 col-md-6">
-        <span><h1>Design.</h1></span>
-      </div>
-      <div class="col-xs-2 col-md-1">
-        <div class="search-function">
-        <form id="search-form">
-          <button id="search-btn" type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+  <div class="col-1">
+    <nav class="navbar navbar-nav">
+      <div class="container-fluid">
+        <div class="col-xs-2 col-md-">
+          <button id="menu-btn" type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
           </button>
-          <div id="search-toggle">
-            <input id="search-text-box" type="text" name="s" value="" placeholder="Search">
+        </div>
+        <div class="col-xs-8 col-md-6">
+          <span><h1>Design.</h1></span>
+        </div>
+        <div class="col-xs-2 col-md-1">
+          <div class="search-function">
+          <form id="search-form">
+            <button id="search-btn" type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+            <div id="search-toggle">
+              <input id="search-text-box" type="text" name="s" value="" placeholder="Search">
+            </div>
+          </form>
           </div>
-        </form>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
 
-  <div id="image">
+  <div id="image" class="col-2">
     <img src="assets/images/image.jpg" />
   </div>
-  <button id="play-btn" type="button" class="btn btn-default">
-    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-  </button>
-  <main>
+  <main class="col-1">
+    <button id="play-btn" type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+    </button>
     <div id="heading">
       <h2><div id="heading1">
         Design is a journey of
@@ -60,7 +62,7 @@
     </div>
     <div id="author">
       <h3>Writen by <br />
-      William Hernandez. April 05 ,2017</h3>
+      William Hernandez. April 05, 2017</h3>
     </div>
     <div id="navigate">
       <a class="btn btn-primary" href="#" role="button">Link</a>
