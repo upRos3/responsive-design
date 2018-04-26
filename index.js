@@ -1,31 +1,33 @@
 $(document).ready(function() {
+  // Checks what version of browser and returns boolean
+  var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+
   var $searchButton = $("#search-btn");
   var $menuButton = $("#menu-btn");
 
-  $searchButton.on("click", function() {
-    console.log("Sup");
-    $("#search-toggle").slideToggle(400, function() {
-      $("#search-text-box").focus();
+  // Toggles search button. Need to make this for mobile only.
+  if (isMobile.matches) {
+    $searchButton.on("click", function() {
+      console.log("Sup");
+      $("#search-toggle").slideToggle(400, function() {
+        $("#search-text-box").focus();
+      });
     });
-  });
+  }
 
   $menuButton.on("click", function() {
     console.log("menu");
   });
 
-  var isMobile = window.matchMedia("only screen and (max-width: 760px)");
-  console.log(isMobile);
-
+  // Sets number of times visted into local storage
+  // Refactor into function
   var timesVisited = 1;
 
-  if (localStorage.timesVisited === null) {
-    localStorage.setItem("timesVisited", timesVisited);
-  } else {
-    var timesVisited = Number(localStorage.getItem("timesVisited"));
-    timesVisited += 1;
-    localStorage.setItem("timesVisited", timesVisited);
+  function setTimesVisited(timesVisited) {
+    return localStorage.setItem("timesVisited", timesVisited);
   }
 
+  // Returns if timesVisited is a prime number or not
   function isPrime(num) {
     if (num === 1) {
       return timesVisited;
@@ -41,13 +43,35 @@ $(document).ready(function() {
     }
   }
 
+  if (localStorage.timesVisited === null) {
+    setTimesVisited(timesVisited);
+  } else {
+    timesVisited = Number(localStorage.getItem("timesVisited"));
+    timesVisited += 1;
+    setTimesVisited(timesVisited);
+  }
+
   function numberOfViewsToday(timesVisited) {
     return isPrime(timesVisited);
   }
+  console.log(numberOfViewsToday(timesVisited));
 
+  // Returns alert when someone on a mobile browser returns to the site for a second time
   if (isMobile.matches && timesVisited === 2) {
     alert("Welcome Back!");
   }
 
-  console.log(numberOfViewsToday(timesVisited));
+  // Resets tbe view count of current day
+  var today = moment().format("D M YYYY");
+
+  var expiry = localStorage.getItem("expiry");
+
+  if (!localStorage.expiry) {
+    localStorage.setItem("expiry", today);
+  }
+
+  if (localStorage.expiry !== today) {
+    localStorage.setItem("expiry", today);
+    localStorage.setItem("timesVisited", 1);
+  }
 });
