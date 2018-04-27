@@ -14,6 +14,7 @@ body {
 #menu-btn {
   border: none;
   margin-top: 10px;
+  float: left;
 }
 
 #heading2 {
@@ -74,6 +75,7 @@ h1 {
 
 #search-toggle {
   display: none;
+  margin-top: 10px;
 }
 
 #page-number-nav {
@@ -83,8 +85,10 @@ h1 {
   padding-right: 10px;
 }
 
+/* Border does not currently work. Look into code. */
 #interaction-buttons {
   padding-left: 10px;
+  border: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -139,5 +143,15 @@ h1 {
     margin: auto;
     width: 50%;
     padding: 100px;
+  }
+
+  h1 {
+    float: left;
+    text-align: left;
+    right: -200px;
+  }
+
+  #menu-btn {
+    right: -200px;
   }
 }
