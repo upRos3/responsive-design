@@ -95,9 +95,11 @@ h1 {
   padding-right: 10px;
 }
 
-/* Border does not currently work. Look into code. */
 #interaction-buttons {
   padding-left: 10px;
+}
+
+.btn.btn-default {
   border: none;
 }
 

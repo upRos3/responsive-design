@@ -2,7 +2,7 @@ $(document).ready(function() {
   // Checks what version of browser and returns boolean
   var isMobile = window.matchMedia("only screen and (max-width: 760px)");
 
-  var $navBarContainer = $("#test");
+  var $navBarSpan = $("#nav-bar-span");
 
   // Function renderes Nav Bar elements and shifts order depending on browser that logs in
   function renderNavBar() {
@@ -85,7 +85,7 @@ $(document).ready(function() {
     return $navContainer;
   }
 
-  $navBarContainer.append(renderNavBar());
+  $navBarSpan.append(renderNavBar());
 
   // Toggles search button. Need to make this for mobile only.
 
