@@ -4,9 +4,10 @@ $(document).ready(function() {
 
   var $navBarContainer = $("#test");
 
+  // Function renderes Nav Bar elements and shifts order depending on browser that logs in
   function renderNavBar() {
     var $navContainer = $("<div>").addClass("container-fluid");
-    var $bootstrapColXs2Md1 = $("<div>")
+    var $firstBootstrapColumn = $("<div>")
       .addClass("col-xs-2 col-md-1")
       .attr("id", "menu-container");
     var $menuButton = $("<button>")
@@ -18,29 +19,44 @@ $(document).ready(function() {
       .addClass("glyphicon glyphicon-align-left")
       .attr("aria-hidden", "true");
 
-    // $navBarContainer.append($navContainer);
-    $navContainer.append($bootstrapColXs2Md1);
-    $bootstrapColXs2Md1.append($menuButton);
-    $menuButton.append($glyphIconSpanMenu);
-
-    var $bootstrapColXs8Md6 = $("<div>")
+    var $secondBootstrapColumn = $("<div>")
       .addClass("col-xs-8 col-md-6")
       .attr("id", "title-container");
     var $span = $("<span>");
     var $h1Title = $("<h1>").text("Design.");
 
-    $navContainer.append($bootstrapColXs8Md6);
-    $bootstrapColXs8Md6.append($span);
-    $span.append($h1Title);
+    // Moves elements depending on screen size
+    if (isMobile.matches) {
+      $navContainer.append($firstBootstrapColumn);
+      $firstBootstrapColumn.append($menuButton);
+      $menuButton.append($glyphIconSpanMenu);
 
-    $navContainer.append($bootstrapColXs2Md1);
+      $navContainer.append($secondBootstrapColumn);
+      $secondBootstrapColumn.append($span);
+      $span.append($h1Title);
+    }
+
+    if (!isMobile.matches) {
+      $navContainer.append($secondBootstrapColumn);
+      $secondBootstrapColumn.append($span);
+      $span.append($h1Title);
+
+      $navContainer.append($firstBootstrapColumn);
+      $firstBootstrapColumn.append($menuButton);
+      $menuButton.append($glyphIconSpanMenu);
+    }
+
+    var $thirdBootstrapColumn = $("<div>").addClass("col-xs-2 col-md-1");
+
+    $navContainer.append($thirdBootstrapColumn);
 
     var $searchContainer = $("<div>").addClass("search-container");
     var $searchForm = $("<form>").attr("id", "search-form");
 
-    $bootstrapColXs2Md1.append($searchContainer);
+    $thirdBootstrapColumn.append($searchContainer);
     $searchContainer.append($searchForm);
 
+    var $searchSpan = $("<span>");
     var $searchButton = $("<button>")
       .attr("id", "search-btn")
       .attr("type", "button")
@@ -50,7 +66,8 @@ $(document).ready(function() {
       .addClass("glyphicon glyphicon-search")
       .attr("aria-hidden", "true");
 
-    $searchForm.append($searchButton);
+    $searchForm.append($searchSpan);
+    $searchSpan.append($searchButton);
     $searchButton.append($glyphIconSpanSearch);
 
     var $searchToggle = $("<div>").attr("id", "search-toggle");
@@ -61,7 +78,7 @@ $(document).ready(function() {
       .attr("value", "")
       .attr("placeholder", "Search");
 
-    $searchForm.append($searchToggle);
+    $searchSpan.append($searchToggle);
     $searchToggle.append($inputSearchBox);
 
     console.log("hello");
@@ -69,6 +86,7 @@ $(document).ready(function() {
   }
 
   $navBarContainer.append(renderNavBar());
+
   // Toggles search button. Need to make this for mobile only.
 
   var $searchButtonToggle = $("#search-btn");
@@ -81,12 +99,7 @@ $(document).ready(function() {
     });
   }
 
-  // $menuButton.on("click", function() {
-  //   console.log("menu");
-  // });
-
   // Sets number of times visted into local storage
-  // Refactor into function
   var timesVisited = 1;
 
   function setTimesVisited(timesVisited) {
